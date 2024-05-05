@@ -1213,7 +1213,7 @@ plt.legend()
 # Show the plot
 plt.show()
 
-This code uses Seaborn and Matplotlib to create a line plot with YearBuilt (year built) and YearRemodAdd (year remodification) on the x-axis, SalePrice on the y-axis, and different lines representing Sale Prices over the years.
+#This code uses Seaborn and Matplotlib to create a line plot with YearBuilt (year built) and YearRemodAdd (year remodification) on the x-axis, SalePrice on the y-axis, and different lines representing Sale Prices over the years.
 
 from sklearn.preprocessing import MinMaxScaler
 
