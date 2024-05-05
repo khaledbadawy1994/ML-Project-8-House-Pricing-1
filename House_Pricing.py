@@ -963,7 +963,7 @@ fig.show()
 
 #Observation :
 
-Based on the provided data, it's apparent that properties boasting four bedrooms (BedroomAbvGr = 4) tend to have higher SalePrices.but there a house with 8 bedrooms but the sale price is very low compatilby to other houses with less bedrooms . it becuase of the some factors with effect the house price
+#Based on the provided data, it's apparent that properties boasting four bedrooms (BedroomAbvGr = 4) tend to have higher SalePrices.but there a house with 8 bedrooms but the sale price is very low compatilby to other houses with less bedrooms . it becuase of the some factors with effect the house price
 
 #Observation :
 
