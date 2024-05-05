@@ -700,7 +700,7 @@ def check_dtypes(missing_train):
 
 check_dtypes(missing_train)
 
-*We check that the dataset does not have negative data
+#*We check that the dataset does not have negative data
 
 # Get the names of all columns with numeric values
 numeric_columns = missing_train.select_dtypes(include=['int64', 'float64']).columns.tolist()
@@ -708,7 +708,7 @@ numeric_columns = missing_train.select_dtypes(include=['int64', 'float64']).colu
 #check negative value
 negative_count = missing_train[numeric_columns].apply(lambda x: (x < 0).sum())
 
-Removing Outliers
+#Removing Outliers
 
 missing_train.info()
 
@@ -718,7 +718,7 @@ missing_train.head()
 
 missing_train.describe()
 
-Analysis and Visualization
+#Analysis and Visualization
 
 df_num = train.select_dtypes(include = ['float64', 'int64'])
 print(df_num.shape)
@@ -726,11 +726,11 @@ df_num.head()
 
 missing_train['Street'].value_counts()
 
-Observation: The street Type of road access is pave according to df_train.
+#Observation: The street Type of road access is pave according to df_train.
 
 missing_train['LotShape'].value_counts()
 
-3 lotshape is Regular (Reg) according to df_train 3 lotshape is Slightly irregular (IR2) according to df_train 1 lotshape is Moderately irregular (IR3) according to df_train
+#3 lotshape is Regular (Reg) according to df_train 3 lotshape is Slightly irregular (IR2) according to df_train 1 lotshape is Moderately irregular (IR3) according to df_train
 
 missing_train['Utilities'].value_counts()
 
