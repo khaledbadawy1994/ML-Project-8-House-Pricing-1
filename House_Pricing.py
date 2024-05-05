@@ -236,7 +236,6 @@ print_heading('Missing values in train and test data')
 df.isnull().sum().sort_values(ascending=False).head(35)
 
 print('shape of data',df.shape)
-shape of data (2919, 82)
 
 def missing_percentage(df):
     """This function takes a DataFrame(df) as input and returns two columns, total missing values and total missing values percentage"""
