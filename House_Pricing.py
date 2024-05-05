@@ -182,7 +182,7 @@ missing_train  = train.copy()
 
 missing_train.info()
 
-Training Data (df_train) Shape
+#Training Data (df_train) Shape
 
 # Training Data Shape
 missing_train.shape
