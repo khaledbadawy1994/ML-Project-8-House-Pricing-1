@@ -203,7 +203,7 @@ print("Total catorical columns:", cat_columns)
 cat_columns=missing_train.select_dtypes(include=['category','object']).columns
 cat_columns
 
-Lets check the columns having int and Float datatype
+#Lets check the columns having int and Float datatype
 
 # Lets check the Number of columns Having int or Float Datatype
 # Initialize a counter for numeric columns
