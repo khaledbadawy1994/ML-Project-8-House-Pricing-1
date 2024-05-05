@@ -961,15 +961,15 @@ fig.update_layout(paper_bgcolor="#42EADD",
                     plot_bgcolor='#42EADD')
 fig.show()
 
-Observation :
+#Observation :
 
 Based on the provided data, it's apparent that properties boasting four bedrooms (BedroomAbvGr = 4) tend to have higher SalePrices.but there a house with 8 bedrooms but the sale price is very low compatilby to other houses with less bedrooms . it becuase of the some factors with effect the house price
 
-Observation :
+#Observation :
 
-Based on the data displayed above, it's clear that houses with a GrLivArea of 4316 and 4476 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with GrLivArea ranging from 630 to 2000 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GrLivArea of 4316 and 4476, their sale ratio is comparatively lower compared to properties with GrLivArea within the 630 to 2000 range.
+#Based on the data displayed above, it's clear that houses with a GrLivArea of 4316 and 4476 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with GrLivArea ranging from 630 to 2000 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GrLivArea of 4316 and 4476, their sale ratio is comparatively lower compared to properties with GrLivArea within the 630 to 2000 range.
 
-Interestingly, certain properties boasting spacious GrLivArea measurements of 5642 and 4676 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
+#Interestingly, certain properties boasting spacious GrLivArea measurements of 5642 and 4676 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
 
 # Grouping data by 'YearRemodAdd' and counting the occurrences
 remodel_counts = train['YearRemodAdd'].value_counts().reset_index()
@@ -988,82 +988,82 @@ fig.update_layout(paper_bgcolor="#42EADD",
                     plot_bgcolor='#42EADD')
 fig.show()
 
-Observation :
+#Observation :
 
-From the provided output, it's evident that there were 178 remodeling events in 1950. Subsequently, there was a notable decline in remodeling activity until around 1990. Following this period, there was a significant increase in the number of remodeling events, reaching a peak, but then experienced a sharp decrease to the lowest level observed in the dataset.
-
-plot_advanced_scatter(train , x='TotalBsmtSF', y='SalePrice', title='TotalBsmtSF Vs SalePrice')
-
-Observation :
-
-From the provided output, it's evident that there were 178 remodeling events in 1950. Subsequently, there was a notable decline in remodeling activity until around 1990. Following this period, there was a significant increase in the number of remodeling events, reaching a peak, but then experienced a sharp decrease to the lowest level observed in the dataset.
+#From the provided output, it's evident that there were 178 remodeling events in 1950. Subsequently, there was a notable decline in remodeling activity until around 1990. Following this period, there was a significant increase in the number of remodeling events, reaching a peak, but then experienced a sharp decrease to the lowest level observed in the dataset.
 
 plot_advanced_scatter(train , x='TotalBsmtSF', y='SalePrice', title='TotalBsmtSF Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the data displayed above, it's clear that houses with a TotalBsmtSF (Total Basement Square Footage) of 2444 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with TotalBsmtSF ranging from 480 to 1600 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a TotalBsmtSF of 2444, their sale ratio is comparatively lower compared to properties with TotalBsmtSF within the 480 to 1600 range.
+#From the provided output, it's evident that there were 178 remodeling events in 1950. Subsequently, there was a notable decline in remodeling activity until around 1990. Following this period, there was a significant increase in the number of remodeling events, reaching a peak, but then experienced a sharp decrease to the lowest level observed in the dataset.
 
-In the output above, we can observe that there are certain properties where TotalBsmtSF equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
+plot_advanced_scatter(train , x='TotalBsmtSF', y='SalePrice', title='TotalBsmtSF Vs SalePrice')
 
-Interestingly, certain properties boasting spacious TotalBsmtSF measurements of 6110 and 3138 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
+#Observation :
+
+#Based on the data displayed above, it's clear that houses with a TotalBsmtSF (Total Basement Square Footage) of 2444 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with TotalBsmtSF ranging from 480 to 1600 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a TotalBsmtSF of 2444, their sale ratio is comparatively lower compared to properties with TotalBsmtSF within the 480 to 1600 range.
+
+#In the output above, we can observe that there are certain properties where TotalBsmtSF equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
+
+#Interestingly, certain properties boasting spacious TotalBsmtSF measurements of 6110 and 3138 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
 
 plot_advanced_scatter(train , x='GrLivArea', y='SalePrice', title='GrLivArea Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the data displayed above, it's clear that houses with a GrLivArea of 4316 and 4476 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with GrLivArea ranging from 630 to 2000 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GrLivArea of 4316 and 4476, their sale ratio is comparatively lower compared to properties with GrLivArea within the 630 to 2000 range.
+#Based on the data displayed above, it's clear that houses with a GrLivArea of 4316 and 4476 exhibit the highest sale price, albeit with a lower Sale Ratio. Conversely, properties with GrLivArea ranging from 630 to 2000 demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GrLivArea of 4316 and 4476, their sale ratio is comparatively lower compared to properties with GrLivArea within the 630 to 2000 range.
 
-Interestingly, certain properties boasting spacious GrLivArea measurements of 5642 and 4676 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
+#Interestingly, certain properties boasting spacious GrLivArea measurements of 5642 and 4676 square feet exhibit lower sale prices compared to others with smaller living areas. Several factors may contribute to this price discrepancy. One potential explanation could be the condition or age of the properties, as older or poorly maintained homes may fetch lower prices despite their larger living spaces. Additionally, factors such as location, neighborhood amenities, layout efficiency, and the presence of desirable features like updated kitchens, bathrooms, or outdoor spaces can significantly influence property values. Furthermore, considering the GarageArea unit, properties with limited garage space relative to their living area may also affect their perceived value, particularly in areas where ample parking or storage space is highly valued.
 
 plot_advanced_scatter(train , x='KitchenAbvGr', y= 'SalePrice' , title='KitchenAbvGr Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the data shown, homes with one kitchen located above ground tend to have the highest prices and also boast a higher sale ratio. This suggests that such properties are in greater demand and command premium prices in the market.
+#Based on the data shown, homes with one kitchen located above ground tend to have the highest prices and also boast a higher sale ratio. This suggests that such properties are in greater demand and command premium prices in the market.
 
 plot_advanced_scatter(train , x='TotRmsAbvGrd', y='SalePrice', title='TotRmsAbvGrd Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the provided output, homes with a Total Rooms Above Grade (TotRmsAbvGrd) value of 10 exhibit the highest SalePrice. Additionally, residences with a TotRmsAbvGrd value of 6 have the highest count among the dataset, accompanied by an average SalePrice.
+#Based on the provided output, homes with a Total Rooms Above Grade (TotRmsAbvGrd) value of 10 exhibit the highest SalePrice. Additionally, residences with a TotRmsAbvGrd value of 6 have the highest count among the dataset, accompanied by an average SalePrice.
 
 plot_advanced_scatter(train , x='GarageArea', y='SalePrice', title='GarageArea Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the data presented above, it is evident that houses with a GarageArea of 832 and 813 exhibit the highest sale prices, albeit with a lower Sale Ratio. Conversely, properties with GarageArea ranging from 200 to 600 square feet demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GarageArea of 832 and 813, their sale ratio is comparatively lower compared to properties with GarageArea within the 200 to 600 square feet range.
+#Based on the data presented above, it is evident that houses with a GarageArea of 832 and 813 exhibit the highest sale prices, albeit with a lower Sale Ratio. Conversely, properties with GarageArea ranging from 200 to 600 square feet demonstrate the highest Sale Ratio. This suggests that despite the higher sale price for houses with a GarageArea of 832 and 813, their sale ratio is comparatively lower compared to properties with GarageArea within the 200 to 600 square feet range.
 
-There are exceptions observed among properties with GarageArea values of 1248, 1356, 1390, and 1418, which have notably lower SalePrices. This deviation could be attributed to factors such as the condition of the garage, its functionality, or other specific features that may not align with typical market expectations, ultimately affecting the overall valuation of these properties.
+#There are exceptions observed among properties with GarageArea values of 1248, 1356, 1390, and 1418, which have notably lower SalePrices. This deviation could be attributed to factors such as the condition of the garage, its functionality, or other specific features that may not align with typical market expectations, ultimately affecting the overall valuation of these properties.
 
-In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
+#In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
 
 # plot_scatter(df_train, x='LotArea', y='SalePrice', title='LotArea Vs SalePrice')
 plot_advanced_scatter(train , x='LotArea', y='SalePrice', title='LotArea Vs SalePrice')
 
-Observations :
+#Observations :
 
-Based on the provided data, it's observed that properties with LotArea of 21,535 square feet and 15,623 square feet command the highest SalePrices, yet they exhibit relatively low sale ratios. Conversely, properties with LotArea ranging from 70,000 to 115,000 square feet demonstrate higher sale ratios and boast SalePrices above the average. Notably, certain properties with larger LotArea sizes have comparatively lower SalePrices. This could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased LotArea.
+#Based on the provided data, it's observed that properties with LotArea of 21,535 square feet and 15,623 square feet command the highest SalePrices, yet they exhibit relatively low sale ratios. Conversely, properties with LotArea ranging from 70,000 to 115,000 square feet demonstrate higher sale ratios and boast SalePrices above the average. Notably, certain properties with larger LotArea sizes have comparatively lower SalePrices. This could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased LotArea.
 
 # plot_scatter(df_train, x='BsmtFinSF1', y='SalePrice', title='BsmtFinSF1 Vs SalePrice')
 plot_advanced_scatter(train , x='BsmtFinSF1', y='SalePrice', title='BsmtFinSF1 Vs SalePrice')
 
-Observations:
+#Observations:
 
-Upon analyzing the provided data, it is noted that properties with BsmtFinSF1 ranging from 1455 to 2096 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with BsmtFinSF1 ranging from 100 to 1100 square feet demonstrate higher sale ratios and achieve SalePrices close to the average. Notably, certain properties with larger BsmtFinSF1 sizes have comparatively lower SalePrices. This phenomenon could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased BsmtFinSF1 size.
+#Upon analyzing the provided data, it is noted that properties with BsmtFinSF1 ranging from 1455 to 2096 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with BsmtFinSF1 ranging from 100 to 1100 square feet demonstrate higher sale ratios and achieve SalePrices close to the average. Notably, certain properties with larger BsmtFinSF1 sizes have comparatively lower SalePrices. This phenomenon could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased BsmtFinSF1 size.
 
-In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
+#In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
 
 plot_advanced_scatter(train , x='1stFlrSF', y='SalePrice', title='1stFlrSF Vs SalePrice')
 plot_advanced_scatter(train, x='2ndFlrSF', y='SalePrice', title='2ndFlrSF Vs SalePrice')
 
-Observation:
+#Observation:
 
-Upon reviewing the provided data, it's observed that properties with a 1stFlrSF (First Floor Square Footage) ranging between 2411 and 2444 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with a 1stFlrSF ranging from 500 to 1800 square feet demonstrate higher sale ratios and achieve SalePrices close to or above the average. Notably, certain properties with larger 1stFlrSF sizes have comparatively lower SalePrices. This phenomenon could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased BsmtFinSF1 size.
+#Upon reviewing the provided data, it's observed that properties with a 1stFlrSF (First Floor Square Footage) ranging between 2411 and 2444 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with a 1stFlrSF ranging from 500 to 1800 square feet demonstrate higher sale ratios and achieve SalePrices close to or above the average. Notably, certain properties with larger 1stFlrSF sizes have comparatively lower SalePrices. This phenomenon could be attributed to factors such as location desirability, property condition, or amenities offered, which may not align with the increased BsmtFinSF1 size.
 
-Upon reviewing the provided data, it's observed that properties with a 2ndFlrSF (Second Floor Square Footage) ranging between 1872 and 2065 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with a 2ndFlrSF ranging from 500 to 1000 square feet demonstrate higher sale ratios and achieve SalePrices close to the average SalePrice.
+#Upon reviewing the provided data, it's observed that properties with a 2ndFlrSF (Second Floor Square Footage) ranging between 1872 and 2065 square feet command the highest SalePrices. However, despite their larger sizes, they exhibit relatively low sale ratios. Conversely, properties with a 2ndFlrSF ranging from 500 to 1000 square feet demonstrate higher sale ratios and achieve SalePrices close to the average SalePrice.
 
-In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
+#In the output above, we can observe that there are certain properties where GarageArea equals zero. These instances are considered outliers because they deviate from the typical pattern or distribution observed in the dataset.
 
 def plotting_3_chart(df, feature):
     ## Importing seaborn, matplotlab and scipy modules.
@@ -1104,9 +1104,9 @@ def plotting_3_chart(df, feature):
 
 plotting_3_chart(train, 'SalePrice')
 
-missing_train
+#missing_train
 
-missing_train1=missing_train.drop(['Alley','PoolQC','Fence','MiscFeature'],axis=1)
+#missing_train1=missing_train.drop(['Alley','PoolQC','Fence','MiscFeature'],axis=1)
 
 #saleprice correlation matrix
 k = 15 #number of variables for heatmap
