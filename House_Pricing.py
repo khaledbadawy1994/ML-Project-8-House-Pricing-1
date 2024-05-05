@@ -344,23 +344,23 @@ So we will fill the year with 1979 and the Lot frontage with 68
 numerical_df['GarageYrBlt'] = numerical_df['GarageYrBlt'].fillna(numerical_df['YrSold']-35)
 numerical_df['LotFrontage'] = numerical_df['LotFrontage'].fillna(68)
 
-Fill rest with zero 0
+#Fill rest with zero 0
 
 numerical_df= numerical_df.fillna(0)
 
 numerical_df.isnull().sum().sort_values(ascending=False).head(10)
 
-Milestone: Finally impute Numerical values
+#Milestone: Finally impute Numerical values
 
-What's left of the Missing Values
+#What's left of the Missing Values
 
-Navigating Special Values
+#Navigating Special Values
 
-Upon closer examination of the evidence datasets, I found the unspecified clues were cataloged as "NaN" rather than the more descriptive "NA" label. While models can analyze numeric unknowns, interpreting context from categorical unknowns becomes ambiguous.
+#Upon closer examination of the evidence datasets, I found the unspecified clues were cataloged as "NaN" rather than the more descriptive "NA" label. While models can analyze numeric unknowns, interpreting context from categorical unknowns becomes ambiguous.
 
-I've reclassified all "NaN" clues as the clearer "NA" tag for non-existent attributes. This ensures any analytical tools I employ will treat undisclosed clues as meaningful categorical variables that represent potential attribute categories, rather than simply missing values.
+#I've reclassified all "NaN" clues as the clearer "NA" tag for non-existent attributes. This ensures any analytical tools I employ will treat undisclosed clues as meaningful categorical variables that represent potential attribute categories, rather than simply missing values.
 
-First, let us gather all these features that we have discoverd in one place
+#First, let us gather all these features that we have discoverd in one place
 
 features_with_na = ['PoolQC','MiscFeature','Alley','Fence','MasVnrType','FireplaceQu',
                'GarageQual','GarageCond','GarageFinish','GarageType', 'Electrical',
@@ -368,25 +368,25 @@ features_with_na = ['PoolQC','MiscFeature','Alley','Fence','MasVnrType','Firepla
                'BsmtExposure','BsmtCond','BsmtQual','BsmtFinType1','BsmtFinType2',
                'MSZoning', 'Utilities']
                
-Transforming "NA"s into Feature Gold
+#Transforming "NA"s into Feature Gold
 
-Upon closer examination of the evidence datasets, I found the unspecified clues were cataloged as "NaN" rather than the more descriptive "NA" label. While models can analyze numeric unknowns, interpreting context from categorical unknowns becomes ambiguous.
+#Upon closer examination of the evidence datasets, I found the unspecified clues were cataloged as "NaN" rather than the more descriptive "NA" label. While models can analyze numeric unknowns, interpreting context from categorical unknowns becomes ambiguous.
 
-I've reclassified all "NaN" clues as the clearer "NA" tag for non-existent attributes. This ensures any analytical tools I employ will treat undisclosed clues as meaningful categorical variables that represent potential attribute categories, rather than simply missing values.
+#I've reclassified all "NaN" clues as the clearer "NA" tag for non-existent attributes. This ensures any analytical tools I employ will treat undisclosed clues as meaningful categorical variables that represent potential attribute categories, rather than simply missing values.
 
-First, let us gather all these features that we have discoverd in one place
+#First, let us gather all these features that we have discoverd in one place
 
-Now replace the NaN values with NA as I have explained above.
+#Now replace the NaN values with NA as I have explained above.
 
-To clarify:
+#To clarify:
 
-I am proactively classifying NA as meaningful attribute categories. This allows models to analyze NA as potential value options for features. Rather than opaque NaN, NA represents categorical information.
+#I am proactively classifying NA as meaningful attribute categories. This allows models to analyze NA as potential value options for features. Rather than opaque NaN, NA represents categorical information.
 
 # replace all values of NaN with None
 for feature in features_with_na:
     train[feature].fillna('NA', inplace=True)
     test[feature].fillna('NA', inplace=True)
-Now I will check if there any numerical missing values
+#Now I will check if there any numerical missing values
 
 numerical_columns = [col for col in train.columns if train[col].dtype != 'object']
 # Get all catergorical columns
@@ -413,14 +413,14 @@ print_heading("Missing Values in Train Data")
 missing_value_counts = count_missing_values(train[numerical_columns])
 missing_value_counts
 
-Test Data Missing Values
+#Test Data Missing Values
 
 # Display  all rows in the Test data that contain at least one missing value.
 print_heading("Missing Values in Test Data")
 missing_value_counts = count_missing_values(test, set='Test')
 missing_value_counts
 
-Low Variance Columns
+#Low Variance Columns
 
 import matplotlib.pyplot as plt
 import seaborn as sns
