@@ -1474,7 +1474,6 @@ fig.update_layout(paper_bgcolor="#42EADD", plot_bgcolor='#42EADD')
 fig.show()
 
 missing_train = remove_outliers_zscore(missing_train, ['LotArea'])
-Total number of outliers detected and Deleted are : 10
 
 #Plot Box Plot to Seee Outliers in LotArea in Plotly
 fig = px.box(missing_train, y="GrLivArea")
