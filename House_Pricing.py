@@ -1186,11 +1186,11 @@ plt.figure(figsize=(15, 20))
 for column in normalized_data.columns:
     sns.kdeplot(normalized_data[column], label=column, linewidth=2, shade=True)
 
-Insights:
+#Insights:
 
-This KDE plots provide a clear overview of the normalized distribution for each numerical feature in the House Price dataset. The normalization process ensures that the features are on a consistent scale, aiding in the identification of patterns and potential outliers. Observing the shapes and peaks of the KDEs can offer insights into the underlying data distribution, facilitating a better understanding of the dataset's characteristics. The visualization can be particularly useful for assessing the relative importance of different features and detecting any potential skewness or multimodality in their distributions.
+#This KDE plots provide a clear overview of the normalized distribution for each numerical feature in the House Price dataset. The normalization process ensures that the features are on a consistent scale, aiding in the identification of patterns and potential outliers. Observing the shapes and peaks of the KDEs can offer insights into the underlying data distribution, facilitating a better understanding of the dataset's characteristics. The visualization can be particularly useful for assessing the relative importance of different features and detecting any potential skewness or multimodality in their distributions.
 
-SalePrice Evaluation with time using Ploty and Seaborn+Matplotlib
+#SalePrice Evaluation with time using Ploty and Seaborn+Matplotlib
 
 import matplotlib.pyplot as plt
 import seaborn as sns
