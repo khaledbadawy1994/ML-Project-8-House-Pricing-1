@@ -226,7 +226,7 @@ train.columns
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-Concatition data
+#Concatition data
 
 missing_train['train']  = 1
 missing_test['train']  = 0
