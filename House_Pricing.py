@@ -883,15 +883,15 @@ def plot_advanced_scatter(df, x, y, title=None):
     
 plot_advanced_scatter(train , x='FullBath', y='SalePrice', title='Full Bath Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the provided data, it's evident that properties with a greater number of FullBath features command higher SalePrices. but when we see sale ratio the Houses with 2 Baths Have High Sale Ratio
+#Based on the provided data, it's evident that properties with a greater number of FullBath features command higher SalePrices. but when we see sale ratio the Houses with 2 Baths Have High Sale Ratio
 
 plot_advanced_scatter(train , x='GarageCars', y='SalePrice', title='GarageCars Vs SalePrice')
 
-Observation :
+#Observation :
 
-Based on the provided data, it's evident that properties with a GarageCars Of 3 command higher SalePrices.
+#Based on the provided data, it's evident that properties with a GarageCars Of 3 command higher SalePrices.
 
 import plotly.express as px
 import pandas as pd
@@ -916,15 +916,15 @@ plot_advanced_scatter(train , x='BedroomAbvGr', y='SalePrice', title='BedroomAbv
 
 plot_advanced_scatter(train , x='OverallQual', y='SalePrice', title='OverallQual Vs SalePrice')
 
-Observation:
+#Observation:
 
-According to the data provided, properties with an exceptional OverallQual rating of 10 tend to command higher SalePrices. but have low sale ratio
+#According to the data provided, properties with an exceptional OverallQual rating of 10 tend to command higher SalePrices. but have low sale ratio
 
 plot_advanced_scatter(train , 'OverallCond','SalePrice', title='OverallCond vs Sale')
 
-Observation:
+#Observation:
 
-According to the data provided, properties with an Medium OverallCond rating of 6 tend to command higher SalePrices.
+#According to the data provided, properties with an Medium OverallCond rating of 6 tend to command higher SalePrices.
 
 # Assuming 'YearBuilt' is the column for the year and 'SalePrice' is the column for sale prices
 yearly_data = train[['YearBuilt', 'SalePrice']]
@@ -940,9 +940,9 @@ fig.update_layout(paper_bgcolor="#42EADD",
                     plot_bgcolor='#42EADD')
 fig.show()
 
-Observations :
+#Observations :
 
-It's notable from the above output that the average house price demonstrates a consistent increase on a year-by-year basis. This trend highlights a positive trajectory in the housing market.
+#It's notable from the above output that the average house price demonstrates a consistent increase on a year-by-year basis. This trend highlights a positive trajectory in the housing market.
 
 # Grouping data by 'YearRemodAdd' and counting the occurrences
 remodel_counts = train['YearRemodAdd'].value_counts().reset_index()
