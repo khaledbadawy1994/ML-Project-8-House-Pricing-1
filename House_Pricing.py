@@ -258,7 +258,7 @@ msno.bar(df, color='blue')
 # Show the plot
 plt.show()
 
-Some data precessing for imputation of missing values
+#Some data precessing for imputation of missing values
 
 #Percentage of NAN Values
 NAN = [(c, df[c].isna().mean()*100) for c in df]
@@ -267,12 +267,12 @@ NAN = pd.DataFrame(NAN, columns=["column_name", "percentage"])
 NAN = NAN[NAN.percentage > 50]
 NAN.sort_values("percentage", ascending=False)
 
-Dropping the columns
+#Dropping the columns
 
 df=df.drop(['PoolQC','MiscFeature','Alley','Fence','MasVnrType'],axis=1)
 I am dropping these columns because they have missing values exceeding 50%.
 
-NUMERICAL DATA and CATEGORICAL DATA
+#NUMERICAL DATA and CATEGORICAL DATA
 
 print_heading('Numerical and cetegorical features in  data')
 object_df = df.select_dtypes(include=['object'])
@@ -284,36 +284,36 @@ print(object_df.dtypes)
 print_heading('Numerical features in data')
 print(numerical_df.dtypes)
 
-Treatment categorical data
+#Treatment categorical data
 
 print_heading('Categorical features of Missing values in data')
 #Number of null values in each feature
 null_counts = object_df.isnull().sum().sort_values(ascending=False)
 null_counts.head(20)
 
-Fill the following columns with "None" (refer to the data description for details):
+#Fill the following columns with "None" (refer to the data description for details):
 
-BsmtQual
+#BsmtQual
 
-BsmtCond
+#BsmtCond
 
-BsmtExposure
+#BsmtExposure
 
-BsmtFinType1
+#BsmtFinType1
 
-BsmtFinType2
+#BsmtFinType2
 
-GarageType
+#GarageType
 
-GarageFinish
+#GarageFinish
 
-GarageQual
+#GarageQual
 
-FireplaceQu
+#FireplaceQu
 
-GarageCond
+#GarageCond
 
-Fill the remaining features with their respective most frequent values.
+#Fill the remaining features with their respective most frequent values.
 
 columns_None = ['BsmtQual','BsmtCond','BsmtExposure','BsmtFinType1','BsmtFinType2','GarageType','GarageFinish','GarageQual','FireplaceQu','GarageCond']
 object_df[columns_None]= object_df[columns_None].fillna('None')
@@ -321,24 +321,23 @@ object_df[columns_None]= object_df[columns_None].fillna('None')
 print_heading('After Treating Missing values in data')
 object_df.isnull().sum().sort_values(ascending=False).head(10)
 
-I am addressing the missing values in categorical features through imputation.
+#I am addressing the missing values in categorical features through imputation.
 
-Treatment Numerical Feature
+#Treatment Numerical Feature
 
 print_heading('Numerical features in data')
 #Number of null values in each feature
 NUll_val = numerical_df.isnull().sum().sort_values(ascending=False)
 NUll_val.head(20)
 
-Fill GarageYrBlt and LotFrontage with appropriate values.
+#Fill GarageYrBlt and LotFrontage with appropriate values.
 
-Fill the rest of the columns with 0.
+#Fill the rest of the columns with 0.
 
 print((numerical_df['YrSold']-numerical_df['YearBuilt']).median())
 print(numerical_df["LotFrontage"].median())
-35.0
-68.0
-So we will fill the year with 1979 and the Lot frontage with 68
+
+#So we will fill the year with 1979 and the Lot frontage with 68
 
 numerical_df['GarageYrBlt'] = numerical_df['GarageYrBlt'].fillna(numerical_df['YrSold']-35)
 numerical_df['LotFrontage'] = numerical_df['LotFrontage'].fillna(68)
