@@ -1719,10 +1719,6 @@ print("X_train shape:", X_train.shape)
 print("y_train shape:", y_train.shape)
 print("X_test shape:", X_test.shape)
 print("y_test shape:", y_test.shape)
-X_train shape: (1080, 27)
-y_train shape: (1080,)
-X_test shape: (271, 27)
-y_test shape: (271,)
 
 #Build Baseline
 
