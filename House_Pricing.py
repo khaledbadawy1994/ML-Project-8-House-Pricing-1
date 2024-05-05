@@ -459,15 +459,13 @@ plt.ylabel('Count')
 plt.tight_layout()
 plt.show()
 
-Due to the low variance columns we will drop them
+#Due to the low variance columns we will drop them
 
 object_columns_df = object_df.drop(['Heating','RoofMatl','Condition2','Street','Utilities'],axis=1)
 
-Why we drop Low variance Columns?
+#Why we drop Low variance Columns?
 
-Dropping low-variance columns helps eliminate features with minimal variability, streamlining the dataset and potentially improving model generalization by reducing noise and computational complexity.
-
-Double-click (or enter) to edit
+#Dropping low-variance columns helps eliminate features with minimal variability, streamlining the dataset and potentially improving model generalization by reducing noise and computational complexity.
 
 # Lets Check the Missing values percentage present in the Training Data
 missing_train.isnull().sum().sort_values(ascending=False)/len(missing_train)*100
@@ -476,11 +474,11 @@ train_num = train.select_dtypes(include = ['float64', 'int64'])
 print(train_num.shape)
 train_num.head()
 
-Plot the distribution for all the numerical features.
+#Plot the distribution for all the numerical features.
 
 train_num.hist(figsize=(16, 20), bins=40, xlabelsize=8, ylabelsize=8);
 
-Multicollinearity
+#Multicollinearity
 
 # check the correlation for columns => GarageArea & GarageCars with the target
 print(train['GarageArea'].corr(train['GarageCars']))
@@ -517,11 +515,11 @@ print(train['2ndFlrSF'].corr(train['SalePrice']))
 
 print(train['GrLivArea'].corr(train['SalePrice']))
 
-Now we will search for columns that has a correlation more than 70% and drop one of them with the condition that the correlation with the target column (SalePrice) is smaller than another column
+#Now we will search for columns that has a correlation more than 70% and drop one of them with the condition that the correlation with the target column (SalePrice) is smaller than another column
 
-missing_train
+#missing_train
 
-Check for high and low cardinality
+#Check for high and low cardinality
 
 missing_train.select_dtypes('object').nunique().sort_values()
 
