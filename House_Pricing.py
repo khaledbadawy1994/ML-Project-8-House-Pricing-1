@@ -1272,7 +1272,7 @@ plt.title("After Scaling")
 plt.tight_layout()
 plt.show()
 
-Lately We would like to use the Random Forest Regressor algorithm, scaling features is generally less critical due to the algorithm's non-parametric and ensemble nature. Random Forest is insensitive to the absolute scale of features, and its decision-making process is based on the relative ordering of values. While scaling might not have a significant impact on the algorithm's performance, it remains a good practice for consistent behavior across different algorithms and in cases where features have disparate scales, ensuring better convergence during tree-building.
+#Lately We would like to use the Random Forest Regressor algorithm, scaling features is generally less critical due to the algorithm's non-parametric and ensemble nature. Random Forest is insensitive to the absolute scale of features, and its decision-making process is based on the relative ordering of values. While scaling might not have a significant impact on the algorithm's performance, it remains a good practice for consistent behavior across different algorithms and in cases where features have disparate scales, ensuring better convergence during tree-building.
 
 #normal distribution\
 from scipy import stats
