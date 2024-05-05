@@ -1,6 +1,6 @@
 # ML-Project-8-House-Pricing-1
 
-Import libraries
+#Import libraries
 
 import pandas as pd
 import numpy as np
@@ -41,7 +41,7 @@ def print_heading(heading):
     print(heading.upper())
     print('-' * 50)
     
-** Load Dataset**
+#** Load Dataset**
 
 train=pd.read_csv('//content/drive/MyDrive/train1.csv')
 test=pd.read_csv('/content/drive/MyDrive/test1.csv')
@@ -57,7 +57,7 @@ test.drop("group", axis=1, inplace=True)
 
 df.head()
 
-** Some Data Exploration**
+#** Some Data Exploration**
 
 pd.set_option('display.max_columns', None) # to display all columns
 train.head()
@@ -66,59 +66,59 @@ test.head()
 
 submission.head()
 
-Shape of data
+#Shape of data
 
 print_heading('Shape of train and test data')
 print(f'In train dataset there are {train.shape[0]} rows and {train.shape[1]} columns')
 print(f'In test dataset there are {test.shape[0]} rows and {test.shape[1]} columns')
 
-Statical information
+#Statical information
 
 train.info()
 
 test.info()
 
-Describe
+#Describe
 
 print_heading('Statical description  of train data')
 train.describe()
 
-Certainly! Here are some key inferences from the summary statistics of the train dataset: Numerical Features:
+#Certainly! Here are some key inferences from the summary statistics of the train dataset: Numerical Features:
 
-LotFrontage: The average lot frontage is around 70, with a minimum of 21 and a maximum of 313. MasVnrArea: Most houses have a masonry veneer area close to zero, with a maximum of 1600. GarageYrBlt: The average garage construction year is around 1978, with a minimum of 1900 and a maximum of 2010. Living Area Features:
+#LotFrontage: The average lot frontage is around 70, with a minimum of 21 and a maximum of 313. MasVnrArea: Most houses have a masonry veneer area close to zero, with a maximum of 1600. GarageYrBlt: The average garage construction year is around 1978, with a minimum of 1900 and a maximum of 2010. Living Area Features:
 
-GrLivArea: The average above-ground living area is approximately 1515 square feet, ranging from 334 to 5642. TotalBsmtSF: Total basement area varies, with an average of 1057 square feet and a maximum of 6110. Bathroom Features:
+#GrLivArea: The average above-ground living area is approximately 1515 square feet, ranging from 334 to 5642. TotalBsmtSF: Total basement area varies, with an average of 1057 square feet and a maximum of 6110. Bathroom Features:
 
-BsmtFullBath: Most houses have either no basement full baths or one. FullBath: The number of full bathrooms varies, with an average of 1.57. Garage Features:
+#BsmtFullBath: Most houses have either no basement full baths or one. FullBath: The number of full bathrooms varies, with an average of 1.57. Garage Features:
 
-GarageCars: The average number of cars that can fit in garages is approximately 1.77, ranging from 0 to 4. GarageArea: Garage area varies, with an average of 472.98 square feet. Outdoor Features:
+#GarageCars: The average number of cars that can fit in garages is approximately 1.77, ranging from 0 to 4. GarageArea: Garage area varies, with an average of 472.98 square feet. Outdoor Features:
 
-WoodDeckSF: Many houses have a wood deck, with an average area of 94.24 square feet. OpenPorchSF: The average open porch area is 46.66 square feet. Pool and Miscellaneous:
+#WoodDeckSF: Many houses have a wood deck, with an average area of 94.24 square feet. OpenPorchSF: The average open porch area is 46.66 square feet. Pool and Miscellaneous:
 
-PoolArea: Most houses do not have a pool, with an average pool area of 2.76 square feet. MiscVal: The average miscellaneous value is around 43.49, with a maximum of 15500. Sale Price:
+#PoolArea: Most houses do not have a pool, with an average pool area of 2.76 square feet. MiscVal: The average miscellaneous value is around 43.49, with a maximum of 15500. Sale Price:
 
-SalePrice: The average sale price is approximately 180,921,withaminimumof 34,900 and a maximum of $755,000. note: These inferences provide a quick overview of the dataset, highlighting key statistics for various features.
+#SalePrice: The average sale price is approximately 180,921,withaminimumof 34,900 and a maximum of $755,000. note: These inferences provide a quick overview of the dataset, highlighting key statistics for various features.
 
 print_heading('Statical description of test data')
 test.describe()
 
-Here are some key inferences from the summary statistics of the Test dataset: Numerical Features:
+#Here are some key inferences from the summary statistics of the Test dataset: Numerical Features:
 
-LotFrontage: The average lot frontage is around 68.58, with a minimum of 21 and a maximum of 200. MasVnrArea: The average masonry veneer area is approximately 100.71, with a maximum of 1290. GarageYrBlt: The average garage construction year is around 1977, with a minimum of 1895 and a maximum of 2207. Living Area Features:
+#LotFrontage: The average lot frontage is around 68.58, with a minimum of 21 and a maximum of 200. MasVnrArea: The average masonry veneer area is approximately 100.71, with a maximum of 1290. GarageYrBlt: The average garage construction year is around 1977, with a minimum of 1895 and a maximum of 2207. Living Area Features:
 
-GrLivArea: The average above-ground living area is approximately 1486 square feet, ranging from 407 to 5095. TotalBsmtSF: Total basement area varies, with an average of 1046 square feet and a maximum of 5095. Bathroom Features:
+#GrLivArea: The average above-ground living area is approximately 1486 square feet, ranging from 407 to 5095. TotalBsmtSF: Total basement area varies, with an average of 1046 square feet and a maximum of 5095. Bathroom Features:
 
-BsmtFullBath: Most houses have either no basement full baths or one. FullBath: The number of full bathrooms varies, with an average of 1.57. Garage Features:
+#BsmtFullBath: Most houses have either no basement full baths or one. FullBath: The number of full bathrooms varies, with an average of 1.57. Garage Features:
 
-GarageCars: The average number of cars that can fit in garages is approximately 1.77, ranging from 0 to 5. GarageArea: Garage area varies, with an average of 472.77 square feet. Outdoor Features: Outdoor Features:
+#GarageCars: The average number of cars that can fit in garages is approximately 1.77, ranging from 0 to 5. GarageArea: Garage area varies, with an average of 472.77 square feet. Outdoor Features: Outdoor Features:
 
-WoodDeckSF: Many houses have a wood deck, with an average area of 93.17 square feet. OpenPorchSF: The average open porch area is 48.31 square feet. Pool and Miscellaneous:
+#WoodDeckSF: Many houses have a wood deck, with an average area of 93.17 square feet. OpenPorchSF: The average open porch area is 48.31 square feet. Pool and Miscellaneous:
 
-PoolArea: Most houses do not have a pool, with an average pool area of 1.74 square feet. MiscVal: The average miscellaneous value is around 58.17, with a maximum of 17000. Sale Price:
+#PoolArea: Most houses do not have a pool, with an average pool area of 1.74 square feet. MiscVal: The average miscellaneous value is around 58.17, with a maximum of 17000. Sale Price:
 
-This dataset doesn't include the "SalePrice" column, which was present in the first dataset.
+#This dataset doesn't include the "SalePrice" column, which was present in the first dataset.
 
-Shape of Datasets
+#Shape of Datasets
 
 # Checking the number of rows and columns
 #Train
