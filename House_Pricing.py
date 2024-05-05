@@ -173,9 +173,9 @@ print(f"Number of duplicate rows in train_data: {train_duplicates}")
 print(f"Number of duplicate rows in test_data: {test_duplicates}")
 print(f"Number of duplicate rows in test_data: {submission_duplicates}")
 
-Exploratary Data Analysis
+#Exploratary Data Analysis
 
-Deal with Missing values
+#Deal with Missing values
 
 missing_test  = test.copy()
 missing_train  = train.copy()
