@@ -270,7 +270,7 @@ NAN.sort_values("percentage", ascending=False)
 #Dropping the columns
 
 df=df.drop(['PoolQC','MiscFeature','Alley','Fence','MasVnrType'],axis=1)
-I am dropping these columns because they have missing values exceeding 50%.
+#I am dropping these columns because they have missing values exceeding 50%.
 
 #NUMERICAL DATA and CATEGORICAL DATA
 
