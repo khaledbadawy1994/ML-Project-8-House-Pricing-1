@@ -1161,7 +1161,7 @@ for i in range(len(numerical_columns), num_rows * 3):
 
 plt.show()
 
-The data is not normally distributed, many features are skewed and other features exhibits different bimodal and multimodal peaks and kurtosis
+#The data is not normally distributed, many features are skewed and other features exhibits different bimodal and multimodal peaks and kurtosis
 
 # Select the numerical columns for visualization
 numerical_columns = ['LotFrontage', 'LotArea', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF',
