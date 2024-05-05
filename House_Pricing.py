@@ -1294,7 +1294,7 @@ fig = plt.figure()
 res = stats.probplot(train['SalePrice'], plot=plt)
 plt.show()
 
-Log Transformation
+#Log Transformation
 
 #We use the numpy fuction log1p which  applies log(1+x) to all elements of the column
 missing_train["SalePrice"] = np.log1p(missing_train["SalePrice"])
@@ -1317,11 +1317,11 @@ fig = plt.figure()
 res = stats.probplot(missing_train['SalePrice'], plot=plt)
 plt.show()
 
-Why we use log tranformer?
+#Why we use log tranformer?
 
-Skewed Data: Reduces the impact of extreme values in positively skewed data. Variance Stabilization: Stabilizes the variance across different levels of an independent variable. Normalization: Makes data more normally distributed, which is often assumed in statistical models. Interpretability: Provides a more interpretable scale, especially for percentage changes. Equalizing Effects: Ensures equal importance of errors in predicting high and low values. Multiplicative Relationships: Converts multiplicative relationships into additive ones. Homoscedasticity: Helps address unequal spread of residuals in regression models. bold text
+#Skewed Data: Reduces the impact of extreme values in positively skewed data. Variance Stabilization: Stabilizes the variance across different levels of an independent variable. Normalization: Makes data more normally distributed, which is often assumed in statistical models. Interpretability: Provides a more interpretable scale, especially for percentage changes. Equalizing Effects: Ensures equal importance of errors in predicting high and low values. Multiplicative Relationships: Converts multiplicative relationships into additive ones. Homoscedasticity: Helps address unequal spread of residuals in regression models. bold text
 
-Visualizations Of Outlier
+#Visualizations Of Outlier
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -1579,16 +1579,16 @@ def mice_imput(df:pd.DataFrame, fill:str, based:list) -> pd.Series :
     Returns:
     - pd.Series: A Series containing the imputed values for the specified column.
 
-    MICE (Multiple Imputation by Chained Equations) is a statistical method used for imputing
-    missing data in a dataset.
-    It is an iterative algorithm that imputes missing values one variable at a time,
-    considering the relationships between variables. In this implementation:
+   # MICE (Multiple Imputation by Chained Equations) is a statistical method used for imputing
+   # missing data in a dataset.
+    #It is an iterative algorithm that imputes missing values one variable at a time,
+   # considering the relationships between variables. In this implementation:
 
-    1. Categorical columns are identified in the 'based' list.
-    2. A temporary DataFrame is created by one-hot encoding categorical columns and
-        selecting the target column ('fill').
-         3. A missing value mask is generated for the temporary DataFrame.
-    4. The IterativeImputer from scikit-learn is used to impute missing values iteratively.
+   # 1. Categorical columns are identified in the 'based' list.
+    #2. A temporary DataFrame is created by one-hot encoding categorical columns and
+    #selecting the target column ('fill').
+    #3. A missing value mask is generated for the temporary DataFrame.
+    #4. The IterativeImputer from scikit-learn is used to impute missing values iteratively.
     5. The imputed values are assigned to the original DataFrame in the specified column.
     """
 
@@ -1620,7 +1620,7 @@ df["HeatingQC"].value_counts() / len(df) * 100
 train.columns = [col.replace(" ", "_") for col in train.columns]
 test.columns = [col.replace(" ", "_") for col in test.columns]
 
-Now, let's ep dive into normalization techniques. After removing the outliers and setting a threshold of 4, we observe a slight improvement in numerical skewness. Now, let's harness the power of normalization techniques like Box-Cox, Yeo-Johnson, and Quantile Transformation.
+#Now, let's ep dive into normalization techniques. After removing the outliers and setting a threshold of 4, we observe a slight improvement in numerical skewness. Now, let's harness the power of normalization techniques like Box-Cox, Yeo-Johnson, and Quantile Transformation.
 
 imp_feat = train[['OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 'TotalBsmtSF',
 'GrLivArea', 'FullBath', 'HalfBath', 'BedroomAbvGr', 'KitchenAbvGr',
@@ -1629,17 +1629,17 @@ imp_feat = train[['OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 'To
 ]
 imp_feat.head()
 
-Preprocessing
+#Preprocessing
 
-Ecoding the data
+#Ecoding the data
 
 missing_train = pd.get_dummies(missing_train,dtype=float,drop_first=True)
 
-Split the data
+#Split the data
 
 missing_train.head()
 
-Creating New Feature
+#Creating New Feature
 
 numerical_df['Age_House']= (numerical_df['YrSold']-numerical_df['YearBuilt'])
 numerical_df['Age_House'].describe()
@@ -1685,7 +1685,7 @@ high_corr_features_table.columns = ['SalePrice']
 
 print(high_corr_features_table)
 
-Machine Learning
+#Machine Learning
 
 df_train = pd.get_dummies(df_train,dtype=float,drop_first=True)
 
@@ -1727,7 +1727,7 @@ y_train shape: (1080,)
 X_test shape: (271, 27)
 y_test shape: (271,)
 
-Build Baseline
+#Build Baseline
 
 from sklearn.metrics import mean_absolute_error
 y_mean = y_train.mean()
@@ -1902,11 +1902,11 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-Observations: I used Ridge Regression, LinearRegression, DecisionTreeRegressor, RandomForestRegressor, KNeighborsRegressor, SVR, XGBRegressor, GradientBoostingRegressor Models and Undergoes the Hyperparameter Tuning and choose The best Model from all of them using GridSearchCV. I found that the Best Model based on RMSE is Model: SVR
+#Observations: I used Ridge Regression, LinearRegression, DecisionTreeRegressor, RandomForestRegressor, KNeighborsRegressor, SVR, XGBRegressor, GradientBoostingRegressor Models and Undergoes the Hyperparameter Tuning and choose The best Model from all of them using GridSearchCV. I found that the Best Model based on RMSE is Model: SVR
 Root_mean_squared_error: 0.14783289540818184
 SVR Best parameters: {'C': 1, 'gamma': 0.1, 'kernel': 'rbf'}
 
-LinearRegression
+#LinearRegression
 
 from sklearn.linear_model import LinearRegression
 Lrg = LinearRegression()
@@ -1925,7 +1925,7 @@ reg_acc_test = r2_score(y_test , reg_y_pred_test)
 print("Training Accuracy:", round(reg_acc_train, 4))
 print("Test Accuracy:", round(reg_acc_test, 4))
 
-Polynomial Regression
+#Polynomial Regression
 
 from sklearn.preprocessing import PolynomialFeatures
 poly_reg = PolynomialFeatures(degree = 2)
@@ -1934,7 +1934,7 @@ X_test_poly = poly_reg.transform(X_test)
 poly_lr = LinearRegression()
 poly_lr.fit(X_train_poly, y_train)
 
-Evaluation the model
+#Evaluation the model
 
 y_pred = poly_lr.predict(X_test_poly)
 y_train_pred = poly_lr.predict(X_train_poly)
@@ -1943,7 +1943,7 @@ r2_poly_test = r2_score(y_test,y_pred)
 print("R2 Train Score:", r2_poly_train)
 print("R2 Test Score:", r2_poly_test)
 
-Ridge classiffier
+#Ridge classiffier
 
 rge = Ridge()
 rge.fit(X_train , y_train);
@@ -1959,7 +1959,7 @@ rge_acc_test = r2_score(y_test , rge_y_pred_test)
 print("Training Accuracy:", round(rge_acc_train, 4))
 print("Test Accuracy:", round(rge_acc_test, 4))
 
-Robust Scaler
+#Robust Scaler
 
 from sklearn.preprocessing import RobustScaler
 from sklearn.linear_model import Lasso
@@ -1978,7 +1978,7 @@ lso_acc_test = r2_score(y_test , lso_y_pred_test)
 print("Training Accuracy:", round(lso_acc_train, 4))
 print("Test Accuracy:", round(lso_acc_test, 4))
 
-** RandomForestRegressor**
+#** RandomForestRegressor**
 
 from sklearn.ensemble import RandomForestRegressor
 rf = RandomForestRegressor(n_estimators=1200,
@@ -2004,7 +2004,7 @@ rf_acc_test = r2_score(y_test , rf_y_pred_test)
 print("Training Accuracy:", round(rf_acc_train, 4))
 print("Test Accuracy:", round(rf_acc_test, 4))
 
-** DecisionTreeRegressor**
+#** DecisionTreeRegressor**
 
 from sklearn.tree import DecisionTreeRegressor
 
@@ -2030,7 +2030,7 @@ dt_acc_test = r2_score(y_test , dt_y_pred_test)
 print("Training Accuracy:", round(dt_acc_train, 4))
 print("Test Accuracy:", round(dt_acc_test, 4))
 
-** XGBRegressor**
+#** XGBRegressor**
 
 from xgboost import XGBRegressor
 
@@ -2051,9 +2051,9 @@ xgb_acc_test = r2_score(y_test , xgb_y_pred_test)
 print("Training Accuracy:", round(xgb_acc_train, 4))
 print("Test Accuracy:", round(xgb_acc_test, 4))
 
-CatBoostRegressor
+#CatBoostRegressor
 
-!pip install catboost
+pip install catboost
 
 from catboost import CatBoostClassifier
 from sklearn.metrics import mean_absolute_percentage_error
@@ -2078,12 +2078,12 @@ model_acc_test = r2_score(y_test , model_y_pred_test)
 print("Training Accuracy:", round(model_acc_train, 4))
 print("Test Accuracy:", round(model_acc_test, 4))
 
-Linear SVR
+#Linear SVR
 
 svr = SVR(kernel = 'linear')
 svr.fit(X_train, y_train)
 
-Evaluation the model
+#Evaluation the model
 
 y_pred = svr.predict(X_test)
 y_train_pred = svr.predict(X_train)
@@ -2096,12 +2096,12 @@ mse_svr_lr_test = mean_squared_error(y_test, y_pred)
 print("Mean Squared Error of Train:", mse_svr_lr_train)
 print("Mean Squared Error of Test:", mse_svr_lr_test)
 
-Lasso
+#Lasso
 
 lasso = Lasso(alpha=0.001)
 lasso.fit(X_train, y_train)
 
-Evaluation the model
+#Evaluation the model
 
 y_pred = lasso.predict(X_test)
 y_train_pred = lasso.predict(X_train)
@@ -2114,7 +2114,7 @@ mse_lasso_test = mean_squared_error(y_test, y_pred)
 print("Mean Squared Error of Train:", mse_lasso_train)
 print("Mean Squared Error of Test:", mse_lasso_test)
 
-Neural Network
+#Neural Network
 
 tf.random.set_seed(329)
 np.random.seed(329)
@@ -2136,7 +2136,7 @@ history = nn_model.fit(X_train,y_train,epochs=200,verbose=2)
 
 nn_model.summary()
 
-Evaluating the model
+#Evaluating the model
 
 pd.DataFrame(history.history).plot()
 plt.title('Loss Graph')
@@ -2194,9 +2194,9 @@ plt.show()
 
 model_acc_test = r2_score(y_test , y_pred)
 
-Voting Regressor
+#Voting Regressor
 
-!pip install sklego
+pip install sklego
 
 from sklego.linear_model import LADRegression
 models = pd.DataFrame()
@@ -2242,7 +2242,7 @@ mse_voting_test = mean_squared_error(y_test, voting_pred )
 print("Mean Squared Error of Train:", mse_voting_train )
 print("Mean Squared Error of Test:", mse_voting_test)
 
-Comparing modules
+#Comparing modules
 
 from sklearn.metrics import accuracy_score
 models = pd.DataFrame({
@@ -2257,7 +2257,7 @@ models.sort_values(by='Scores', ascending= False)
 models.sort_values(by='Scores', ascending=False).style.background_gradient(
         cmap='Blues')
 
-Final prediction
+#Final prediction
 
 df_train
 
