@@ -246,7 +246,7 @@ def missing_percentage(df):
 
 missing_percentage(df)
 
-Missing Data Visulization
+#Missing Data Visulization
 
 # Assuming your DataFrame is named 'df'
 plt.figure(figsize=(10, 5))
